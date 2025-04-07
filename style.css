@@ -6,6 +6,8 @@ body {
 }
 
 
+
+
 .resume {
     display: flex;
     flex-wrap: wrap;
@@ -37,8 +39,9 @@ body {
     border: 3px solid #fff;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     display: block;
-    margin: 30px auto; /* ช่วยจัดให้อยู่กึ่งกลางแนวนอน */
-  }
+    margin: 30px auto;
+    /* ช่วยจัดให้อยู่กึ่งกลางแนวนอน */
+}
 
 h1 {
     font-size: 32px;
@@ -126,63 +129,66 @@ i {
         display: flex;
         flex-direction: column;
     }
-    
-  /* ตั้งค่าให้ส่วนที่เป็นฟอร์มอยู่กึ่งกลางทั้งแนวนอนและแนวดิ่ง */
-form {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  form label {
-    font-weight: 600;
-    display: block;
-    margin-bottom: 8px;
-  }
-  
-  textarea {
-    width: 100%;
-    max-width: 100%;
-    padding: 10px;
-    font-family: 'Prompt', sans-serif;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    resize: vertical;
-    box-sizing: border-box;
-    transition: border-color 0.3s;
-  }
-  
-  textarea:focus {
-    border-color: #009688;
-    outline: none;
-  }
-  
-  /* จัดปุ่มให้ตรงกลาง */
-  form button {
-    background-color: #000; /* สีพื้นหลังเป็นสีดำ */
-    color: #fff; /* ตัวหนังสือเป็นสีขาว */
-    padding: 10px 20px;
-    font-size: 1rem;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    transition: background-color 0.3s;
-  }
-  
-  form button:hover {
-    background-color: #333; /* เปลี่ยนสีพื้นหลังเมื่อ hover เป็นสีเทาเข้ม */
-  }
-  
-      
-      
+
+    /* ตั้งค่าให้ส่วนที่เป็นฟอร์มอยู่กึ่งกลางทั้งแนวนอนและแนวดิ่ง */
+    form {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    form label {
+        font-weight: 600;
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    textarea {
+        width: 100%;
+        max-width: 100%;
+        padding: 10px;
+        font-family: 'Prompt', sans-serif;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        resize: vertical;
+        box-sizing: border-box;
+        transition: border-color 0.3s;
+    }
+
+    textarea:focus {
+        border-color: #009688;
+        outline: none;
+    }
+
+    /* จัดปุ่มให้ตรงกลาง */
+    form button {
+        background-color: #000;
+        /* สีพื้นหลังเป็นสีดำ */
+        color: #fff;
+        /* ตัวหนังสือเป็นสีขาว */
+        padding: 10px 20px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: background-color 0.3s;
+    }
+
+    form button:hover {
+        background-color: #333;
+        /* เปลี่ยนสีพื้นหลังเมื่อ hover เป็นสีเทาเข้ม */
+    }
+
+
+
 }
