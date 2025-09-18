@@ -18,8 +18,8 @@ body {
 
 .left-column {
     flex: 1 1 300px;
-    background-color: #00002e;
-    color: white;
+    background-color: #2e3549;
+    color: #fff;
     padding: 25px;
 }
 
