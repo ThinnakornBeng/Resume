@@ -212,70 +212,6 @@ form button:hover {
     /* เปลี่ยนสีพื้นหลังเมื่อ hover เป็นสีเทาเข้ม */
 }
 
-.profile-pic {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #fff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    display: block;
-    margin: 30px auto;
-    /* ช่วยจัดให้อยู่กึ่งกลางแนวนอน */
-}
-
-h1 {
-    font-size: 32px;
-    margin-bottom: 5px;
-    color: #222;
-}
-
-h3 {
-    font-weight: normal;
-    color: #666;
-}
-
-h2 {
-    font-size: 20px;
-    margin-top: 25px;
-    border-bottom: 2px solid #444;
-    padding-bottom: 5px;
-}
-
-ul {
-    padding-left: 20px;
-    margin: 10px 0;
-}
-
-ul li {
-    margin-bottom: 10px;
-    line-height: 1.5;
-}
-
-section {
-    margin-bottom: 20px;
-}
-
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .resume {
-        flex-direction: column;
-    }
-
-    .left-column,
-    .right-column {
-        flex: 1 1 100%;
-        padding: 20px;
-    }
-
-    h1 {
-        font-size: 26px;
-    }
-
-    h2 {
-        font-size: 18px;
-    }
 
     .language-switcher {
         position: fixed;
@@ -343,6 +279,71 @@ section {
     textarea:focus {
         border-color: #009688;
         outline: none;
+    }
+
+.profile-pic {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    display: block;
+    margin: 30px auto;
+    /* ช่วยจัดให้อยู่กึ่งกลางแนวนอน */
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 5px;
+    color: #222;
+}
+
+h3 {
+    font-weight: normal;
+    color: #666;
+}
+
+h2 {
+    font-size: 20px;
+    margin-top: 25px;
+    border-bottom: 2px solid #444;
+    padding-bottom: 5px;
+}
+
+ul {
+    padding-left: 20px;
+    margin: 10px 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .resume {
+        flex-direction: column;
+    }
+
+    .left-column,
+    .right-column {
+        flex: 1 1 100%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    h2 {
+        font-size: 18px;
     }
 
 
