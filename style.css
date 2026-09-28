@@ -5,6 +5,8 @@ body {
     padding: 0;
 }
 
+
+
 .resume {
     display: flex;
     flex-wrap: wrap;
@@ -104,6 +106,65 @@ body {
 .right-column {
     flex: 2 1 500px;
     padding: 30px;
+}
+
+/* =====================================================
+   QR CODE
+   ===================================================== */
+
+/* กล่องรวม QR ทั้งหมด */
+.qr-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+    margin: 20px auto;
+    flex-wrap: nowrap;
+}
+
+/* กล่องของ QR แต่ละอัน */
+.qr-row .gallery-item {
+    width: 140px;
+    flex: 0 0 140px;
+    text-align: center;
+}
+
+/* กำหนดขนาด QR ให้เท่ากันทุกรูป */
+.qr-row .gallery-item img {
+    display: block;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    object-fit: contain;
+    aspect-ratio: 1 / 1;
+}
+
+/* ชื่อใต้ QR */
+.qr-row .gallery-item p {
+    margin: 8px 0 0;
+    font-size: 13px;
+    text-align: center;
+}
+
+/* หน้าจอขนาดเล็ก */
+@media (max-width: 600px) {
+
+    .qr-row {
+        gap: 8px;
+    }
+
+    .qr-row .gallery-item {
+        width: 100px;
+        flex: 0 0 100px;
+    }
+
+    .qr-row .gallery-item img {
+        width: 90px;
+        height: 90px;
+    }
+
 }
 
 .profile-pic {
