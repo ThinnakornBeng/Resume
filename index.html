@@ -238,8 +238,8 @@
                             Workmotion Corp</span>
                     </h4>
                     <ul>
-                        <li data-th="พัฒนาโมบายแอปพลิเคชันด้วย Flutter" data-en="Mobile App Development with Flutte.">
-                            พัฒนาโมบายแอปพลิเคชันด้วย Flutter
+                        <li data-th="พัฒนาโมบายแอปพลิเคชันด้วย Flutter"
+                            data-en="Mobile App Development with Flutte.">พัฒนาโมบายแอปพลิเคชันด้วย Flutter
                         </li>
                         <li data-th="สนับสนุนงานพัฒนาระบบและซอฟต์แวร์ตามที่ได้รับมอบหมาย"
                             data-en="Support system and software development as assigned.">
@@ -339,142 +339,140 @@
                 <span id="lang-label">EN</span>
             </button>
         </div>
-
-        <script>
-            let currentLang = "TH";
-
-            function setLanguage(lang) {
-                currentLang = lang;
-                document.documentElement.lang = lang.toLowerCase();
-
-                document.querySelectorAll("[data-th][data-en]").forEach((element) => {
-                    const text = element.getAttribute(lang === "TH" ? "data-th" : "data-en");
-                    if (text !== null) {
-                        element.textContent = text;
-                    }
-                });
-
-                document.getElementById("lang-label").textContent = lang === "TH" ? "EN" : "TH";
-            }
-
-            function toggleLanguage() {
-                setLanguage(currentLang === "TH" ? "EN" : "TH");
-            }
-
-            // Export the visible resume as a PNG image.
-            async function downloadPNG() {
-                const resume = document.querySelector(".resume");
-                if (!resume || typeof html2canvas === "undefined") {
-                    alert("ไม่สามารถสร้างไฟล์ PNG ได้ กรุณาเปิดไฟล์ผ่านอินเทอร์เน็ตเพื่อโหลด library ที่จำเป็น");
-                    return;
-                }
-
-                const actions = document.querySelector(".resume-actions");
-                if (actions) actions.style.visibility = "hidden";
-
-                try {
-                    const canvas = await html2canvas(resume, {
-                        scale: 2,
-                        useCORS: true,
-                        backgroundColor: "#ffffff"
-                    });
-
-                    const link = document.createElement("a");
-                    link.download = "Thinnakorn_Sathorn_Resume.png";
-                    link.href = canvas.toDataURL("image/png");
-                    link.click();
-                } finally {
-                    if (actions) actions.style.visibility = "";
-                }
-            }
-
-            // Export the resume as a single A4 page without cropping.
-            async function downloadPDF() {
-                const resume = document.querySelector(".resume");
-
-                if (!resume || typeof html2canvas === "undefined" || !window.jspdf) {
-                    alert("ไม่สามารถสร้างไฟล์ PDF ได้ กรุณาเปิดไฟล์ผ่านอินเทอร์เน็ตเพื่อโหลด library ที่จำเป็น");
-                    return;
-                }
-
-                const actions = document.querySelector(".resume-actions");
-                if (actions) actions.style.visibility = "hidden";
-
-                try {
-                    // A4 dimensions in millimeters.
-                    const A4_WIDTH = 210;
-                    const A4_HEIGHT = 297;
-
-                    // Safe print area: leaves a small border so nothing touches the edge.
-                    const SAFE_MARGIN = 5;
-                    const maxWidth = A4_WIDTH - (SAFE_MARGIN * 2);
-                    const maxHeight = A4_HEIGHT - (SAFE_MARGIN * 2);
-
-                    // Render the complete resume first.
-                    const canvas = await html2canvas(resume, {
-                        scale: 2,
-                        useCORS: true,
-                        allowTaint: false,
-                        backgroundColor: "#ffffff",
-                        logging: false,
-                        windowWidth: resume.scrollWidth,
-                        windowHeight: resume.scrollHeight
-                    });
-
-                    const { jsPDF } = window.jspdf;
-
-                    const pdf = new jsPDF({
-                        orientation: "portrait",
-                        unit: "mm",
-                        format: "a4",
-                        compress: true
-                    });
-
-                    // Convert the canvas size to an A4-safe size.
-                    const canvasRatio = canvas.width / canvas.height;
-                    let imageWidth = maxWidth;
-                    let imageHeight = imageWidth / canvasRatio;
-
-                    // Critical: if the resume is taller than A4, scale it down.
-                    if (imageHeight > maxHeight) {
-                        imageHeight = maxHeight;
-                        imageWidth = imageHeight * canvasRatio;
-                    }
-
-                    // Center the resume on the A4 page.
-                    const x = (A4_WIDTH - imageWidth) / 2;
-                    const y = (A4_HEIGHT - imageHeight) / 2;
-
-                    // One and only one page.
-                    pdf.addImage(
-                        canvas.toDataURL("image/jpeg", 0.95),
-                        "JPEG",
-                        x,
-                        y,
-                        imageWidth,
-                        imageHeight,
-                        undefined,
-                        "FAST"
-                    );
-
-                    pdf.save("Thinnakorn_Sathorn_Resume_A4.pdf");
-
-                } catch (error) {
-                    console.error("PDF export error:", error);
-                    alert("เกิดข้อผิดพลาดในการสร้าง PDF กรุณาลองใหม่อีกครั้ง");
-                } finally {
-                    if (actions) actions.style.visibility = "";
-                }
-            }
-
-            // Start in Thai. Click the button to switch to English.
-            window.addEventListener("DOMContentLoaded", () => {
-                setLanguage("TH");
-            });
-        </script>
     </main>
 
+    <script>
+        let currentLang = "TH";
 
+        function setLanguage(lang) {
+            currentLang = lang;
+            document.documentElement.lang = lang.toLowerCase();
+
+            document.querySelectorAll("[data-th][data-en]").forEach((element) => {
+                const text = element.getAttribute(lang === "TH" ? "data-th" : "data-en");
+                if (text !== null) {
+                    element.textContent = text;
+                }
+            });
+
+            document.getElementById("lang-label").textContent = lang === "TH" ? "EN" : "TH";
+        }
+
+        function toggleLanguage() {
+            setLanguage(currentLang === "TH" ? "EN" : "TH");
+        }
+
+        // Export the visible resume as a PNG image.
+        async function downloadPNG() {
+            const resume = document.querySelector(".resume");
+            if (!resume || typeof html2canvas === "undefined") {
+                alert("ไม่สามารถสร้างไฟล์ PNG ได้ กรุณาเปิดไฟล์ผ่านอินเทอร์เน็ตเพื่อโหลด library ที่จำเป็น");
+                return;
+            }
+
+            const actions = document.querySelector(".resume-actions");
+            if (actions) actions.style.visibility = "hidden";
+
+            try {
+                const canvas = await html2canvas(resume, {
+                    scale: 2,
+                    useCORS: true,
+                    backgroundColor: "#ffffff"
+                });
+
+                const link = document.createElement("a");
+                link.download = "Thinnakorn_Sathorn_Resume.png";
+                link.href = canvas.toDataURL("image/png");
+                link.click();
+            } finally {
+                if (actions) actions.style.visibility = "";
+            }
+        }
+
+        // Export the resume as a single A4 page without cropping.
+        async function downloadPDF() {
+            const resume = document.querySelector(".resume");
+
+            if (!resume || typeof html2canvas === "undefined" || !window.jspdf) {
+                alert("ไม่สามารถสร้างไฟล์ PDF ได้ กรุณาเปิดไฟล์ผ่านอินเทอร์เน็ตเพื่อโหลด library ที่จำเป็น");
+                return;
+            }
+
+            const actions = document.querySelector(".resume-actions");
+            if (actions) actions.style.visibility = "hidden";
+
+            try {
+                // A4 dimensions in millimeters.
+                const A4_WIDTH = 210;
+                const A4_HEIGHT = 297;
+
+                // Safe print area: leaves a small border so nothing touches the edge.
+                const SAFE_MARGIN = 5;
+                const maxWidth = A4_WIDTH - (SAFE_MARGIN * 2);
+                const maxHeight = A4_HEIGHT - (SAFE_MARGIN * 2);
+
+                // Render the complete resume first.
+                const canvas = await html2canvas(resume, {
+                    scale: 2,
+                    useCORS: true,
+                    allowTaint: false,
+                    backgroundColor: "#ffffff",
+                    logging: false,
+                    windowWidth: resume.scrollWidth,
+                    windowHeight: resume.scrollHeight
+                });
+
+                const { jsPDF } = window.jspdf;
+
+                const pdf = new jsPDF({
+                    orientation: "portrait",
+                    unit: "mm",
+                    format: "a4",
+                    compress: true
+                });
+
+                // Convert the canvas size to an A4-safe size.
+                const canvasRatio = canvas.width / canvas.height;
+                let imageWidth = maxWidth;
+                let imageHeight = imageWidth / canvasRatio;
+
+                // Critical: if the resume is taller than A4, scale it down.
+                if (imageHeight > maxHeight) {
+                    imageHeight = maxHeight;
+                    imageWidth = imageHeight * canvasRatio;
+                }
+
+                // Center the resume on the A4 page.
+                const x = (A4_WIDTH - imageWidth) / 2;
+                const y = (A4_HEIGHT - imageHeight) / 2;
+
+                // One and only one page.
+                pdf.addImage(
+                    canvas.toDataURL("image/jpeg", 0.95),
+                    "JPEG",
+                    x,
+                    y,
+                    imageWidth,
+                    imageHeight,
+                    undefined,
+                    "FAST"
+                );
+
+                pdf.save("Thinnakorn_Sathorn_Resume_A4.pdf");
+
+            } catch (error) {
+                console.error("PDF export error:", error);
+                alert("เกิดข้อผิดพลาดในการสร้าง PDF กรุณาลองใหม่อีกครั้ง");
+            } finally {
+                if (actions) actions.style.visibility = "";
+            }
+        }
+
+        // Start in Thai. Click the button to switch to English.
+        window.addEventListener("DOMContentLoaded", () => {
+            setLanguage("TH");
+        });
+    </script>
 </body>
 
 </html>
