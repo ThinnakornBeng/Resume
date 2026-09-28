@@ -190,6 +190,28 @@ i {
     margin-right: 8px;
 }
 
+/* จัดปุ่มให้ตรงกลาง */
+form button {
+    background-color: #00005d;
+    /* สีพื้นหลังเป็นสีดำ */
+    color: #fff;
+    /* ตัวหนังสือเป็นสีขาว */
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #333;
+    /* เปลี่ยนสีพื้นหลังเมื่อ hover เป็นสีเทาเข้ม */
+}
+
 .profile-pic {
     width: 250px;
     height: 250px;
@@ -323,26 +345,5 @@ section {
         outline: none;
     }
 
-    /* จัดปุ่มให้ตรงกลาง */
-    form button {
-        background-color: #00005d;
-        /* สีพื้นหลังเป็นสีดำ */
-        color: #fff;
-        /* ตัวหนังสือเป็นสีขาว */
-        padding: 10px 20px;
-        font-size: 1rem;
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        transition: background-color 0.3s;
-    }
-
-    form button:hover {
-        background-color: #333;
-        /* เปลี่ยนสีพื้นหลังเมื่อ hover เป็นสีเทาเข้ม */
-    }
 
 }
