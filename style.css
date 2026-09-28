@@ -18,8 +18,8 @@ body {
 
 .resume-actions {
     position: fixed;
-    right: 20px;
-    bottom: 20px;
+    right: 450px;
+    bottom: 880px;
     z-index: 9999;
     display: flex;
     gap: 8px;
@@ -280,7 +280,7 @@ section {
 
 
     .language-switcher {
-        position: absolute;
+        position: fixed;
         top: 15px;
         right: 20px;
         z-index: 999;
