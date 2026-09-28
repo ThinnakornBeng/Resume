@@ -165,6 +165,31 @@ body {
 
 }
 
+.skill-category {
+    margin-bottom: 14px;
+}
+
+.skill-category h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0 0 6px 0;
+    color: #ffffff;
+}
+
+.skill-category ul {
+    margin: 0;
+    padding-left: 18px;
+}
+
+.skill-category li {
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+i {
+    margin-right: 8px;
+}
+
 .profile-pic {
     width: 250px;
     height: 250px;
@@ -208,30 +233,7 @@ ul li {
 section {
     margin-bottom: 20px;
 }
-.skill-category {
-    margin-bottom: 14px;
-}
 
-.skill-category h3 {
-    font-size: 15px;
-    font-weight: 600;
-    margin: 0 0 6px 0;
-    color: #ffffff;
-}
-
-.skill-category ul {
-    margin: 0;
-    padding-left: 18px;
-}
-
-.skill-category li {
-    margin-bottom: 5px;
-    line-height: 1.4;
-}
-
-i {
-    margin-right: 8px;
-}
 
 /* Responsive Design */
 @media (max-width: 768px) {
