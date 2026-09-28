@@ -18,8 +18,8 @@ body {
 
 .resume-actions {
     position: fixed;
-    right: 450px;
-    bottom: 880px;
+    right: 20px;
+    bottom: 20px;
     z-index: 9999;
     display: flex;
     gap: 8px;
